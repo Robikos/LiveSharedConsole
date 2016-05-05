@@ -1,0 +1,35 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$black: #000;
+
+@mixin console-font {
+  color: #111;
+  font-size: 18px;
+  font-family: 'Arial Sans Serif';
+}
+
+.app {
+  margin: 10px;
+}
+
+.window {
+  width: 500px;
+  height: 200px;
+  margin-top: 20px;
+
+  border: 1px solid $black;
+  border-radius: 4px;
+
+  @include console-font;
+}
+
+.input {
+  width: 430px;
+  margin-top: 20px;
+}
+
+.ready-btn {
+  width: 70px;
+}
