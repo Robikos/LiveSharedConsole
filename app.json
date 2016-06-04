@@ -1,0 +1,6 @@
+{
+  "name": "Live Shared Console",
+  "description": "Project using Rails 5, Action Cable, React.js & Redux. Online Ruby console using sockets",
+  "repository": "https://github.com/Robikos/LiveSharedConsole",
+  "keywords": ["ruby", "rails", "react", "redux", "actioncable"]
+}
