@@ -1,5 +1,5 @@
 default: &default
-  adapter: postgres
+  adapter: postgresql
   pool: 5
   timeout: 5000
   username: postgres
@@ -8,6 +8,8 @@ default: &default
 development:
   <<: *default
   database: live_shared_console_development
+  username: robikos
+  password:
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -15,6 +17,8 @@ development:
 test:
   <<: *default
   database: live_shared_console_test
+  username: robikos
+  password:
 
 production:
   <<: *default
