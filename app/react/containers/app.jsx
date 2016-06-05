@@ -1,12 +1,14 @@
 import React from 'react';
 import Window from '../components/window';
 import Input from '../components/input';
+import API from '../services/api';
 
 class App extends React.Component {
   constructor() {
     super();
 
     this.typeCommandTrigger = this.typeCommandTrigger.bind(this);
+    this.typeCommandCallback = this.typeCommandCallback.bind(this);
     this.currentUserName = this.currentUserName.bind(this);
 
     this.state = {
@@ -17,13 +19,11 @@ class App extends React.Component {
 
   typeCommandTrigger(text) {
     this.setState({content: this.state.content + "> " + text + " ----> "});
-    $.post(
-      '/home/write',
-      { command: text },
-      data => {
-        this.setState({content: this.state.content + data['response']});
-      }
-    ).bind(this);
+    API.writeCode(text).then(this.typeCommandCallback);
+  }
+
+  typeCommandCallback(data) {
+    this.setState({content: this.state.content + data['response']});
   }
 
   currentUserName() {
