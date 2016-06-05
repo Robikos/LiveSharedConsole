@@ -18,4 +18,5 @@
 /node_modules
 /app/assets/javascripts/react_bundle.js
 /app/assets/stylesheets/react_bundle.css
-/app/public/*
+
+public/actual_code.rb
