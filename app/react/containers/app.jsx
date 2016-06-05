@@ -7,9 +7,11 @@ class App extends React.Component {
     super();
 
     this.typeCommandTrigger = this.typeCommandTrigger.bind(this);
+    this.currentUserName = this.currentUserName.bind(this);
 
     this.state = {
-      content: ''
+      content: '',
+      current_user: gon.current_user
     };
   }
 
@@ -24,11 +26,15 @@ class App extends React.Component {
     ).bind(this);
   }
 
+  currentUserName() {
+    return this.state.current_user.email;
+  }
+
   render() {
     return (
       <div className="app">
         <div>
-          Welcome to Ruby interactive console
+          Welcome to Ruby interactive console, dear { this.currentUserName() }
         </div>
         <Window content={ this.state.content } />
         <Input typeCommand={ this.typeCommandTrigger }/>
