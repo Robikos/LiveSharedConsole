@@ -1,6 +1,7 @@
 import React from 'react';
 import Window from '../components/window';
 import Input from '../components/input';
+import LogoutButton from '../components/logout_button';
 import API from '../services/api';
 
 class App extends React.Component {
@@ -33,6 +34,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
+        <LogoutButton />
         <div>
           Welcome to Ruby interactive console, dear { this.currentUserName() }
         </div>
