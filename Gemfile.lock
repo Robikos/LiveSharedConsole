@@ -140,6 +140,7 @@ GEM
       json (~> 1.4)
     react_webpack_rails (0.4.1)
       rails (>= 3.2)
+    redis (3.3.0)
     request_store (1.3.1)
     responders (2.2.0)
       railties (>= 4.2.0, < 5.1)
@@ -198,6 +199,7 @@ DEPENDENCIES
   puma
   rails (= 5.0.0.beta4)
   react_webpack_rails
+  redis
   rwr-redux
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
