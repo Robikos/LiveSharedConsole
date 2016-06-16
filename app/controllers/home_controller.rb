@@ -1,8 +1,11 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:index]
 
   def index
     gon.current_user = current_user
+  end
+
+  def hehe
   end
 
   def write

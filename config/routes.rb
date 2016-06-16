@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'home#index'
+  # root 'home#index'
+  root 'home#hehe'
 
   post '/home/write', to: 'home#write'
 
