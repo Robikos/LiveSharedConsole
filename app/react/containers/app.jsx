@@ -4,7 +4,7 @@ import Input from '../components/input';
 import LogoutButton from '../components/logout_button';
 import API from '../services/api';
 
-class Application extends React.Component {
+class App extends React.Component {
   constructor() {
     super();
 
@@ -33,7 +33,7 @@ class Application extends React.Component {
 
   render() {
     return (
-      <div className="applololo">
+      <div className="app">
         <LogoutButton />
         <div>
           Welcome to Ruby interactive console, dear { this.currentUserName() }
@@ -45,4 +45,4 @@ class Application extends React.Component {
   }
 }
 
-export default Application;
+export default App;
