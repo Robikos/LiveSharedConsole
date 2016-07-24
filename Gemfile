@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 #gem 'rails', github: 'rails/rails'
-gem 'rails'
+gem 'rails', '5.0.0.beta4'
 # Postgres PLS for Heroku
 gem 'pg'
 # Use SCSS for stylesheets
