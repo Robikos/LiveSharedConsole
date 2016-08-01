@@ -1,1 +1,11 @@
-<%= react_component('App') %>
+Hello <%= current_user.try(:email) %> !
+
+Select room or create new: <br>
+
+<% @rooms.each do |room| %>
+  <h2><%= room %></h2>
+<% end %>
+
+<br>
+<br>
+<button>Create a new one!</button>
