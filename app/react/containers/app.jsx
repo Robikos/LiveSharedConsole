@@ -14,7 +14,8 @@ class App extends React.Component {
 
     this.state = {
       content: '',
-      current_user: gon.current_user
+      current_user: gon.current_user,
+      room_id: gon.room_id
     };
   }
 
@@ -31,12 +32,16 @@ class App extends React.Component {
     return this.state.current_user.email;
   }
 
+  currentRoomId() {
+    return this.state.room_id;
+  }
+
   render() {
     return (
       <div className="app">
         <LogoutButton />
         <div>
-          Welcome to Ruby interactive console, dear { this.currentUserName() }
+          Welcome to Ruby interactive console in room { this.currentRoomId() }, dear { this.currentUserName() }
         </div>
         <Window content={ this.state.content } />
         <Input typeCommand={ this.typeCommandTrigger }/>
