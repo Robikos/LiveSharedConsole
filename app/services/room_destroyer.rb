@@ -1,4 +1,4 @@
-def RoomDestroyer
+class RoomDestroyer
   def initialize(room_id, current_user)
     @room_id = room_id
     @current_user = current_user
