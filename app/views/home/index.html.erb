@@ -1,11 +1,25 @@
 Hello <%= current_user.try(:email) %> !
 
-Select room or create new: <br>
+Select room or create new:
 
-<% @rooms.each do |room| %>
-  <h2><%= room %></h2>
-<% end %>
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Users count</th>
+    <th>Join link</th>
+  </tr>
+
+  <% @rooms.each do |room| %>
+    <tr>
+      <td><%= room.id %></td>
+      <td><%= room.name %></td>
+      <td><%= room.users.count %></td>
+      <td><%= link_to 'Join', room %></td>
+    </tr>
+  <% end %>
+</table>
 
 <br>
 <br>
-<button>Create a new one!</button>
+<%= link_to 'Create a new one!', new_room_path, class: "btn btn-primary" %>
