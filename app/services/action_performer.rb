@@ -5,6 +5,7 @@ class ActionPerformer
   end
 
   def call
+    data
   end
 
   private
