@@ -8,7 +8,7 @@ class OutputUpdater
     ActionCable.server.broadcast(
       room_stream_name,
       {
-        message: "#{result}"
+        content: result
       }
     )
   end

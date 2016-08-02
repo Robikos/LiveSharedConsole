@@ -2,8 +2,8 @@ class ConsoleChannel < ApplicationCable::Channel
   def subscribed
     return if room_id.blank?
     RoomCreator.new(room_id, current_user).call
-    UserJoiner.new(room_id, current_user).call
     stream_from "console_stream_#{room_id}"
+    UserJoiner.new(room_id, current_user).call
   end
 
   def unsubscribed
