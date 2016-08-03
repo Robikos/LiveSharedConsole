@@ -9,8 +9,8 @@ class App extends React.Component {
     super();
 
     this.typeCommandTrigger = this.typeCommandTrigger.bind(this);
-    this.typeCommandCallback = this.typeCommandCallback.bind(this);
     this.currentUserName = this.currentUserName.bind(this);
+    this.currentRoomId = this.currentRoomId.bind(this);
 
     this.state = {
       content: '',
@@ -20,12 +20,7 @@ class App extends React.Component {
   }
 
   typeCommandTrigger(text) {
-    this.setState({content: this.state.content + "> " + text + " ----> "});
-    API.writeCode(text).then(this.typeCommandCallback);
-  }
-
-  typeCommandCallback(data) {
-    this.setState({content: this.state.content + data['response']});
+    AppWebSocket.activeStream.send({ code: text });
   }
 
   currentUserName() {
