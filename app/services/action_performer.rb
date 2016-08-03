@@ -1,7 +1,7 @@
 class ActionPerformer
   def initialize(room_id, data)
     @room_id = room_id
-    @data = data
+    @data = data["code"]
   end
 
   def call

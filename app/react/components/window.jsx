@@ -10,7 +10,9 @@ class Window extends React.Component {
   render() {
     return (
       <div className="window">
-        { this.props.content }
+        <code>
+          { this.props.content }
+        </code>
       </div>
     );
   }
