@@ -6,8 +6,8 @@ $black: #000;
 
 @mixin console-font {
   color: #111;
-  font-size: 18px;
-  font-family: 'Arial Sans Serif';
+  font-size: 11px;
+  font-family: 'Consolas';
 }
 
 .app {
@@ -16,7 +16,7 @@ $black: #000;
 
 .window {
   width: 500px;
-  height: 200px;
+  height: 800px;
 
   border: 1px solid $black;
   border-radius: 4px;
