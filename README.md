@@ -1,30 +1,27 @@
-== README
+Live Shared Console README
+===========================
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Used technologies
 
-Things you may want to cover:
+* Ruby on Rails 5.0.0beta4
+* PostgreSQL
+* ActionCable
+* ReactJS
+* `react_webpack_rails` gem
 
-* Ruby version
+# Project setup
 
-* System dependencies
+To run project follow the steps:
+1. `bundle install`
+2. `rake db:setup`
 
-* Configuration
+# Run the app
 
-* Database creation
+1. `npm run start-hot-dev`
+2. `rails s`
 
-* Database initialization
+Eventually run `redis-server` if there are probles with that.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Project uses `npm` and `webpack` for handling react assets.
