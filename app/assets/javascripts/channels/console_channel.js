@@ -1,6 +1,6 @@
 $(function() {
   if (gon.room_id) {
-    return App.activeStream = App.cable.subscriptions.create(
+    return AppWebSocket.activeStream = AppWebSocket.cable.subscriptions.create(
     {
       channel: "ConsoleChannel",
       id: gon.room_id
