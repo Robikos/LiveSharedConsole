@@ -15,7 +15,8 @@ class UserLeaver
     ActionCable.server.broadcast(
       room_stream_name,
       {
-        message: "#{current_user.email} left this room"
+        user: current_user.email,
+        content: "#{current_user.email} left this room"
       }
     )
   end

@@ -15,7 +15,8 @@ class UserJoiner
     ActionCable.server.broadcast(
       room_stream_name,
       {
-        message: "#{current_user.email} joined this room"
+        user: current_user.email,
+        content: "#{current_user.email} joined this room"
       }
     )
   end

@@ -5,19 +5,11 @@ class ActionPerformer
   end
 
   def call
-    `echo #{data} > #{input_fifo_filename}`
-    `cat #{output_fifo_filename}`
+    `echo "#{data}" > public/actual_code.rb`
+    `ruby public/actual_code.rb`
   end
 
   private
-
-  def input_fifo_filename
-    Rails.root.join("tmp/input/#{room_id}")
-  end
-
-  def output_fifo_filename
-    Rails.root.join("tmp/output/#{room_id}.log")
-  end
 
   attr_reader :room_id, :data
 end

@@ -1,6 +1,8 @@
 class OutputUpdater
-  def initialize(room_id, result)
+  def initialize(room_id:, user:, code:, result:)
     @room_id = room_id
+    @user = user
+    @code = code
     @result = result
   end
 
@@ -8,6 +10,8 @@ class OutputUpdater
     ActionCable.server.broadcast(
       room_stream_name,
       {
+        user: user.email,
+        code: code,
         content: result
       }
     )
@@ -19,5 +23,5 @@ class OutputUpdater
     "console_stream_#{room_id}"
   end
 
-  attr_reader :result, :room_id
+  attr_reader :room_id, :user, :code, :result
 end
