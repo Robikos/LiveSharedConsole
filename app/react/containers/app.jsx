@@ -11,12 +11,39 @@ class App extends React.Component {
     this.typeCommandTrigger = this.typeCommandTrigger.bind(this);
     this.currentUserName = this.currentUserName.bind(this);
     this.currentRoomId = this.currentRoomId.bind(this);
+    this.updateConsole = this.updateConsole.bind(this);
 
     this.state = {
-      content: '',
+      content: [],
       current_user: gon.current_user,
       room_id: gon.room_id
     };
+  }
+
+  updateConsole(data) {
+    this.setState(
+      {
+        content: this.state.content.concat([data])
+      }
+    );
+  }
+
+  componentDidMount() {
+    if (this.state.room_id) {
+      AppWebSocket.activeStream = AppWebSocket.cable.subscriptions.create(
+        {
+          channel: "ConsoleChannel",
+          id: gon.room_id
+        },
+        {
+          received(data) {
+            this.updateConsole(data);
+          },
+
+          updateConsole: this.updateConsole
+        }
+      );
+    }
   }
 
   typeCommandTrigger(text) {

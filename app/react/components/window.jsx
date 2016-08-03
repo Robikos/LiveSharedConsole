@@ -3,16 +3,29 @@ import React from 'react';
 class Window extends React.Component {
   static get propTypes() {
     return {
-      content: React.PropTypes.string
+      content: React.PropTypes.array
     };
   }
 
   render() {
     return (
       <div className="window">
-        <code>
-          { this.props.content }
-        </code>
+        <div>
+          {
+            this.props.content.map(
+              (data, index) => {
+                return (
+                  <div key={index}>
+                    <div>User: { data["user"] }</div>
+                    <div>Code: { data["code"] }</div>
+                    <div>Result: { data["content"] }</div>
+                    <br />
+                  </div>
+                );
+              }
+            )
+          }
+        </div>
       </div>
     );
   }
