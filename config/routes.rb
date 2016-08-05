@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
 
+  mount ActionCable.server => '/cable'
+
   resource :home, only: [:index]
   resources :rooms, only: [:new, :create, :show, :destroy]
 
