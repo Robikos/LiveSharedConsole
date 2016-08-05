@@ -2,6 +2,6 @@
 //= require_self
 //= require_tree ./channels
 
-let AppWebSocket = {};
+var AppWebSocket = {};
 
 AppWebSocket.cable = ActionCable.createConsumer();
