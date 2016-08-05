@@ -37,7 +37,8 @@ gem 'react_webpack_rails'
 gem 'rwr-redux'
 gem 'bootstrap-sass'
 
-gem 'devise', git: 'git@github.com:plataformatec/devise.git'
+#gem 'devise', git: 'git@github.com:plataformatec/devise.git'
+gem 'devise', github: 'plataformatec/devise'
 gem 'gon'
 gem 'redis'
 
