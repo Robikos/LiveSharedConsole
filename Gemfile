@@ -41,6 +41,7 @@ gem 'bootstrap-sass'
 gem 'devise', github: 'plataformatec/devise'
 gem 'gon'
 gem 'redis'
+gem 'puma'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
