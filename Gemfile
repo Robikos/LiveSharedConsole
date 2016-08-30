@@ -35,7 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'react_webpack_rails'
 gem 'rwr-redux'
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0.alpha3.1'
 
 #gem 'devise', git: 'git@github.com:plataformatec/devise.git'
 gem 'devise', github: 'plataformatec/devise'
