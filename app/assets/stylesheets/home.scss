@@ -10,25 +10,31 @@ $black: #000;
   font-family: 'Consolas';
 }
 
+.app__outer {
+  display: flex;
+}
+
 .app {
-  margin: 10px;
+  margin: 10px auto;
 }
 
 .window {
-  width: 500px;
+  width: 1000px;
   height: 800px;
 
   border: 1px solid $black;
   border-radius: 4px;
 
+  padding: 10px;
+
   @include console-font;
 }
 
 .input {
-  width: 430px;
+  width: 910px;
   margin-top: 20px;
 }
 
 .ready-btn {
-  width: 70px;
+  width: 90px;
 }

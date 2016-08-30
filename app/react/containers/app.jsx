@@ -60,13 +60,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app">
-        <LogoutButton />
-        <div>
-          Welcome to Ruby interactive console in room { this.currentRoomId() }, dear { this.currentUserName() }
+      <div className="app__outer">
+        <div className="app">
+          <LogoutButton />
+          <div>
+            Welcome to Ruby interactive console in room { this.currentRoomId() }, dear { this.currentUserName() }
+          </div>
+          <Window content={ this.state.content } />
+          <Input typeCommand={ this.typeCommandTrigger }/>
         </div>
-        <Window content={ this.state.content } />
-        <Input typeCommand={ this.typeCommandTrigger }/>
       </div>
     );
   }
