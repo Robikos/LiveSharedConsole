@@ -62,7 +62,6 @@ class App extends React.Component {
     return (
       <div className="app__outer">
         <div className="app">
-          <LogoutButton />
           <div>
             Welcome to Ruby interactive console in room { this.currentRoomId() }, dear { this.currentUserName() }
           </div>

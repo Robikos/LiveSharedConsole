@@ -3,7 +3,6 @@ import API from '../services/api';
 
 class LogoutButton extends React.Component {
   logout() {
-    API.logout();
   }
 
   render() {
