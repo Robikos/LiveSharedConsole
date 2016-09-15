@@ -20,14 +20,15 @@ $black: #000;
 
 .window {
   width: 1000px;
-  height: 800px;
+  height: 400px;
+  padding: 20px 5px !important;
+  overflow: scroll;
+}
 
-  border: 1px solid $black;
-  border-radius: 4px;
-
-  padding: 10px;
-
-  @include console-font;
+.window--inner {
+  background-color: #5bc0de !important;
+  padding: 10px !important;
+  margin: 10px !important;
 }
 
 .input {

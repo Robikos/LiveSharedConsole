@@ -9,13 +9,13 @@ class Window extends React.Component {
 
   render() {
     return (
-      <div className="window">
+      <div className="jumbotron window">
         <div>
           {
             this.props.content.map(
               (data, index) => {
                 return (
-                  <div key={index}>
+                  <div key={index} className="jumbotron window--inner">
                     <div>User: { data["user"] }</div>
                     <div>Code: { data["code"] }</div>
                     <div>Result: { data["content"] }</div>
