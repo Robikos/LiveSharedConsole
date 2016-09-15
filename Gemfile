@@ -36,6 +36,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'react_webpack_rails'
 gem 'rwr-redux'
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
 
 #gem 'devise', git: 'git@github.com:plataformatec/devise.git'
 gem 'devise', github: 'plataformatec/devise'
