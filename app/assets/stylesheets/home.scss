@@ -4,6 +4,10 @@
 
 $black: #000;
 
+body {
+  padding-left: 20px;
+}
+
 @mixin console-font {
   color: #111;
   font-size: 11px;
