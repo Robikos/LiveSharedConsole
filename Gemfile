@@ -34,7 +34,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'react_webpack_rails'
-gem 'rwr-redux'
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
