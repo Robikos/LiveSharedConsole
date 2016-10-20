@@ -4,6 +4,9 @@ import Input from '../components/input';
 import LogoutButton from '../components/logout_button';
 import API from '../services/api';
 
+import { connect } from 'react-redux';
+import { sendCode, receiveResult } from '../actions/index.js';
+
 class App extends React.Component {
   constructor() {
     super();
@@ -12,24 +15,14 @@ class App extends React.Component {
     this.currentUserName = this.currentUserName.bind(this);
     this.currentRoomId = this.currentRoomId.bind(this);
     this.updateConsole = this.updateConsole.bind(this);
-
-    this.state = {
-      content: [],
-      current_user: gon.current_user,
-      room_id: gon.room_id
-    };
   }
 
   updateConsole(data) {
-    this.setState(
-      {
-        content: this.state.content.concat([data])
-      }
-    );
+    this.props.receiveResult(data);
   }
 
   componentDidMount() {
-    if (this.state.room_id) {
+    if (this.props.room_id) {
       AppWebSocket.activeStream = AppWebSocket.cable.subscriptions.create(
         {
           channel: "ConsoleChannel",
@@ -47,15 +40,15 @@ class App extends React.Component {
   }
 
   typeCommandTrigger(text) {
-    AppWebSocket.activeStream.send({ code: text });
+    sendCode(text);
   }
 
   currentUserName() {
-    return this.state.current_user.email;
+    return this.props.current_user.email;
   }
 
   currentRoomId() {
-    return this.state.room_id;
+    return this.props.room_id;
   }
 
   render() {
@@ -65,7 +58,7 @@ class App extends React.Component {
           <div>
             Welcome to Ruby interactive console in room { this.currentRoomId() }, dear { this.currentUserName() }
           </div>
-          <Window content={ this.state.content } />
+          <Window content={ this.props.content } />
           <Input typeCommand={ this.typeCommandTrigger }/>
         </div>
       </div>
@@ -73,4 +66,19 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    content: state.content || [],
+    current_user: gon.current_user,
+    room_id: gon.room_id
+  };
+};
+
+const mapDispatchToProps = dispatch => ({
+  receiveResult: (data) => dispatch(receiveResult(data)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
